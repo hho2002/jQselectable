@@ -116,6 +116,9 @@
       self.selected = document.getElementById(id + '_' + selected_id);
 
       self.$list.hide();
+
+      if ( $.fn.bgiframe )
+        self.$list.bgiframe({opacity:false, src:"about:blank"});
     },
 
     _view: function(defValue) {

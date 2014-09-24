@@ -31,6 +31,7 @@
           show: 'fadeIn',
           hide: 'fadeOut',
           height: 'auto',
+          width: '5em',
           top: 0,
           left: 0,
           opacity: 0.9
@@ -94,6 +95,10 @@
       self.$view = self._view(self._escapeHtml(self.map[value].text))
         .addClass(self.style)
         .addClass(self.attr.klass);
+
+      self.$view.find('span').css({
+        'width': self.conf.width
+      });
 
       self.$list = self._createList()
         .css({

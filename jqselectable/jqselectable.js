@@ -366,7 +366,7 @@
       }
 
       setTimeout(function() {
-        self.selected.focus();
+        if ( self.selected ) self.selected.focus();
       }, isNaN(conf.showDuration) ? (function() {
         var duration = conf.showDuration;
         return (/slow/.test(duration)) ? 610 :
@@ -494,8 +494,8 @@
       var target = ev.target,
         id = target.getAttribute('data-id');
 
-      ev.stopPropagation();
       if ( id && id in jQselectableIds ) {
+        ev.stopPropagation();
         $.each(jQselectableIds, function(key, val) {
           if ( key === id ) return;
           val._hide();

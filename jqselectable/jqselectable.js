@@ -412,7 +412,7 @@
     _change: function(val) {
       var self = this;
       self.$view.find('span').text(self.map[val].text);
-      self.$elem.val(val);
+      self.$elem.val(val).trigger("change");
     },
 
     _callAPI: function(api, args) {
@@ -437,7 +437,7 @@
 
       self._build();
       self._eventify();
-      
+
       self.$elem.trigger('jQselectable.refresh');
     },
 
